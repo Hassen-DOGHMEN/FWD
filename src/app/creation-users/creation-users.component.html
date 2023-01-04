@@ -1,0 +1,48 @@
+<section class="view intro-2"> 
+<div class="full-bg-img mask rgba-gradient">  
+    <div class="container">    
+      <form  #form ="ngForm" (submit)="creerUser(form)">  
+        <div class="text-center mt-5">
+        <i class="fa fa-user-o fa-lg" aria-hidden="true"></i> 
+        </div> 
+         <div class = "form-group"> 
+           <label for="name">Nom Complet</label> 
+           <input type="text" name="prenom" id="prenom " class="form-control" [(ngModel)]="users.nomC"> 
+       </div> 
+       <div class=" form-group">
+           <label for="secondName">Email</label> 
+           <input type="text" name="Nom" id="Nom "  
+           class="form-control"  [(ngModel)]="users.email">   
+       </div>  
+       <div class=" form-group">
+        <label for="secondName">Num Tel</label> 
+        <input type="text" name="Nom" id="Nom "  
+        class="form-control" [(ngModel)]="users.number">   
+    </div>     
+    <div class=" form-group">
+        <label>Matricule </label> 
+        <input type="text" name="Matricule" id="Matricule"  
+         class="form-control" [(ngModel)]="users.matricule">   
+    </div>   
+    <div class=" form-group">
+        <label>Mot De Passe </label> 
+        <input type="text" name="motDePasse" id="motDePasse"  
+         class="form-control" [(ngModel)]="users.motDePasse">    
+    </div>  
+  <div class=" form-group">
+           <label>Role</label>  
+           <select name="client"  (change)= "selectedRole($event)" class="form-control" >  
+            <option> --Role--</option>  
+               <option  [value]= "users" *ngFor="let users of roles"> 
+              {{ users}}
+            </option>  
+          </select>   
+  </div> 
+        <div class="d-grid gap-2 col-6 mx-auto">
+         <button class="btn btn-outline-secondary" type="submit" >Enregistrer</button>
+        </div>
+       </form>
+     </div> 
+     </div>  
+     </section>
+  
